@@ -42,49 +42,31 @@
         </ul>
         <br>
         <div>
-            <p>Pilih Angka Anda:</p>
+            <p>Tekan Start untuk memulai:</p>
 <!--            <p>{{chosenName}}</p>-->
             <input v-model="chosenName" type="password">
-
         </div>
-        <button @click="picker">Choose!</button>
+        <br>
+        <button @click="picker">Start Game</button>
         <br>
         <div>
-
             <p>Tebak Angka Dia:</p>
             <input v-model="pilih" placeholder="Tebak angka dia...">
+            <span v-if="temp<3">
+                <button @click="tebak">tebak</button>
+                <p>{{jawaban}}</p>
+            </span>
+            <span v-else-if="temp==2">
+                <button :disabled="isActive" @click="tebak">tebak</button>
+            </span>
         </div>
-        <br>
-        <p>
-            <span v-if="pilih==''">
-
-            </span>
-            <span v-else-if="pilih>10">
-                Angka Tidak Terdaftar
-            </span>
-            <span v-else-if="pilih<1">
-                Angka Tidak Terdaftar
-            </span>
-            <span v-else-if="pilih==chosenName">
-                Pilihan Benar
-            </span>
-            <span v-else>
-                pilihan salah
-            </span>
-        </p>
-
+        <button @click="restart">Restart</button>
         <footer class="footer" role="contentinfo">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
                         <p>{{footer}}</p>
                         <div class="credits">
-                            <!--
-                            All the links in the footer should remain intact.
-                            You can delete the links only if you purchased the pro version.
-                            Licensing information: https://bootstrapmade.com/license/
-                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=MyPortfolio
-                          -->
                             Designed by Timotius
                         </div>
                     </div>
@@ -108,6 +90,8 @@
             pilih:'',
             pilihAngka:'',
             chosenName:'',
+            jawaban:'',
+            color:"#000000",
             footer:'Timotius Wijayanta/180709845/Kelas D',
             angka:[
                 '1','2','3','4','5','6','7','8','9','10'
@@ -115,9 +99,22 @@
         },
 
         methods: {
-            simpan(){
-                this.pilihAngka=this.pilih;
+            tebak:function(){
+                if (this.chosenName==this.pilih){
+                    this.jawaban= 'benar';
+                }else{
+                    this.jawaban='salah';
+                    this.temp++;
+                }
             },
+            restart:function (){
+                this.temp=0,
+                this.pilih='',
+                this.pilihAngka='',
+                this.chosenName='',
+                this.jawaban='';
+            },
+
             picker:function(){
                 var chosenNumber = Math.floor(Math.random() * this.angka.length);
                 this.chosenName = this.angka[chosenNumber];
