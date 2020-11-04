@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <title>Guided 2</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script src="vue.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-light custom-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">GAME TEBAK ANGKA</a>
+            <a href="#" class="burger" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+            </a>
+
+        </div>
+    </nav>
+    <div id="app" align="center">
+        <p v-show="angka">Silahkan pilih Angka dibawah:</p>
+        <ul v-for="(i,index) in angka":key="index">
+            <p>{{i}}</p>
+        </ul>
+        <br>
+        <div>
+            <p>Pilih Angka Anda:</p>
+<!--            <p>{{chosenName}}</p>-->
+            <input v-model="chosenName" type="password">
+
+        </div>
+        <button @click="picker">Choose!</button>
+        <br>
+        <div>
+
+            <p>Tebak Angka Dia:</p>
+            <input v-model="pilih" placeholder="Tebak angka dia...">
+        </div>
+        <br>
+        <p>
+            <span v-if="pilih==''">
+
+            </span>
+            <span v-else-if="pilih>10">
+                Angka Tidak Terdaftar
+            </span>
+            <span v-else-if="pilih<1">
+                Angka Tidak Terdaftar
+            </span>
+            <span v-else-if="pilih==chosenName">
+                Pilihan Benar
+            </span>
+            <span v-else>
+                pilihan salah
+            </span>
+        </p>
+
+        <footer class="footer" role="contentinfo">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <p>{{footer}}</p>
+                        <div class="credits">
+                            <!--
+                            All the links in the footer should remain intact.
+                            You can delete the links only if you purchased the pro version.
+                            Licensing information: https://bootstrapmade.com/license/
+                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=MyPortfolio
+                          -->
+                            Designed by Timotius
+                        </div>
+                    </div>
+                    <div class="col-sm-6 social text-md-right">
+                        <a href="#"><span class="icofont-twitter"></span></a>
+                        <a href="#"><span class="icofont-facebook"></span></a>
+                        <a href="#"><span class="icofont-dribbble"></span></a>
+                        <a href="#"><span class="icofont-behance"></span></a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            temp:0,
+            pilih:'',
+            pilihAngka:'',
+            chosenName:'',
+            footer:'Timotius Wijayanta/180709845/Kelas D',
+            angka:[
+                '1','2','3','4','5','6','7','8','9','10'
+            ],
+        },
+
+        methods: {
+            simpan(){
+                this.pilihAngka=this.pilih;
+            },
+            picker:function(){
+                var chosenNumber = Math.floor(Math.random() * this.angka.length);
+                this.chosenName = this.angka[chosenNumber];
+            }
+        },
+    });
+</script>
+</html>
