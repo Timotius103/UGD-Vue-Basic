@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00457a6a-14d1-4b44-a7e8-6bb6fb7d3e94" name="Default Changelist" comment="UGD_9845">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.html" beforeDir="false" afterPath="$PROJECT_DIR$/Game.html" afterDir="false" />
-    </list>
+    <list default="true" id="00457a6a-14d1-4b44-a7e8-6bb6fb7d3e94" name="Default Changelist" comment="Remedi UGD_9845" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +51,7 @@
       <workItem from="1604456035395" duration="37000" />
       <workItem from="1604456155290" duration="4999000" />
       <workItem from="1604463727403" duration="2454000" />
-      <workItem from="1604466302236" duration="4640000" />
+      <workItem from="1604466302236" duration="4944000" />
     </task>
     <task id="LOCAL-00001" summary="UGD_9845">
       <created>1604466459411</created>
@@ -63,7 +60,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604466459411</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Remedi UGD_9845">
+      <created>1604471278436</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1604471278436</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,7 +75,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="UGD_9845" />
-    <option name="LAST_COMMIT_MESSAGE" value="UGD_9845" />
+    <MESSAGE value="Remedi UGD_9845" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remedi UGD_9845" />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1604466376973">
